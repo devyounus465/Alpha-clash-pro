@@ -4,6 +4,143 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alpha Clash Pro</title>
+    <!-- daisy ui and tawilwind -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- g font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="/styles/style.css" />
   </head>
-  <body></body>
+  <body>
+    <main
+      class="min-h-screen text-white flex flex-col gap-2 items-center justify-center bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center"
+    >
+      <section id="home-screen" class="home text-center">
+        <h2 class="font-anton text-[170px]">ALPHABET CLASH</h2>
+        <p class="text-2xl font-medium mb-4">
+          Unleash Your Keyboard Kung Fu : Press “Enter” to Play
+        </p>
+        <button
+          onclick="play()"
+          class="btn bg-white text-black text-2xl font-medium"
+        >
+          Play
+        </button>
+      </section>
+      <!-- play ground strat -->
+      <section id="playground-screen" class="play-ground space-y-4 hidden">
+        <!-- screen start -->
+
+        <div>
+          <div
+            class="artboard artboard-horizontal phone-6 border-[20px] border-[#010313cc] bg-[#ffffff82] rounded-[16px]"
+          >
+            <div class="flex justify-center">
+              <p class="px-7 py-4 bg-[#2F2941] w-96 rounded-md mt-[-20px]">
+                Don't watch keyboard while playing...
+              </p>
+            </div>
+
+            <!-- play text view -->
+            <div class="flex justify-center items-center h-full">
+              <p
+                id="random-text"
+                class="text-9xl font-bold text-black text-center"
+              >
+                Y
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- keyboard start -->
+        <div>
+          <div class="my-1 flex w-full justify-center gap-1">
+            <kbd id="q" class="kbd">q</kbd>
+            <kbd id="w" class="kbd">w</kbd>
+            <kbd id="e" class="kbd">e</kbd>
+            <kbd id="r" class="kbd">r</kbd>
+            <kbd id="t" class="kbd">t</kbd>
+            <kbd id="y" class="kbd">y</kbd>
+            <kbd id="u" class="kbd">u</kbd>
+            <kbd id="i" class="kbd">i</kbd>
+            <kbd id="o" class="kbd">o</kbd>
+            <kbd id="p" class="kbd">p</kbd>
+          </div>
+          <div class="my-1 flex w-full justify-center gap-1">
+            <kbd id="a" class="kbd">a</kbd>
+            <kbd id="s" class="kbd">s</kbd>
+            <kbd id="d" class="kbd">d</kbd>
+            <kbd id="f" class="kbd">f</kbd>
+            <kbd id="g" class="kbd">g</kbd>
+            <kbd id="h" class="kbd">h</kbd>
+            <kbd id="j" class="kbd">j</kbd>
+            <kbd id="k" class="kbd">k</kbd>
+            <kbd id="l" class="kbd">l</kbd>
+          </div>
+          <div class="my-1 flex w-full justify-center gap-1">
+            <kbd id="z" class="kbd">z</kbd>
+            <kbd id="x" class="kbd">x</kbd>
+            <kbd id="c" class="kbd">c</kbd>
+            <kbd id="v" class="kbd">v</kbd>
+            <kbd id="b" class="kbd">b</kbd>
+            <kbd id="n" class="kbd">n</kbd>
+            <kbd id="m" class="kbd">m</kbd>
+            <kbd id="/" class="kbd">/</kbd>
+          </div>
+        </div>
+        <!-- keyboard end -->
+        <div class="flex justify-between">
+          <button
+            class="btn py-0 px-7 bg-[#894189] text-white text-sm rounded-full"
+          >
+            Life
+            <img class="w-[18px]" src="images/love.png" alt="" />
+            <span id="player-life">3</span>
+          </button>
+          <button
+            class="btn py-0 px-7 bg-[#894189] text-white text-sm rounded-full"
+          >
+            Score
+            <img class="w-[18px]" src="images/love.png" alt="" />
+            <span id="game-score">0</span>
+          </button>
+        </div>
+        <!-- life score -->
+      </section>
+      <!-- play ground end -->
+
+      <!-- score area start -->
+      <section id="score-board" class="score hidden">
+        <div
+          class="text-white p-[44px] border border-white text-center rounded-md space-y-4 bg-gradient-to-r from-[#ffffff1b] to-[#98979768]"
+        >
+          <h2 class="text-8xl">
+            <span class="font-extrabold">Score:</span>
+            <span id="score-result">14</span>
+          </h2>
+          <button onclick="play()" class="btn">Play Again</button>
+          <p class="text-xl">Practice will make you Pro</p>
+        </div>
+      </section>
+    </main>
+    <script src="scripts/utility.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
 </html>
